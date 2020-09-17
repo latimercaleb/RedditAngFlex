@@ -1,0 +1,22 @@
+<mat-card class='cards'>
+  <mat-card-header>
+    <img *ngIf='showDesktop; else showMobile' mat-card-avatar src='assets/avi1.jpg'/>
+    <ng-template #showMobile>
+      <img  mat-card-avatar src='assets/avi2.PNG'/>
+    </ng-template>
+
+    <mat-card-title>{{cardInfo.title}}</mat-card-title>
+    <mat-card-subtitle>
+      <mat-chip color='primary' selected>{{cardInfo.link_flair_text}}</mat-chip> | 
+      <mat-chip color='accent' selected>{{cardInfo.id}}</mat-chip>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <p>{{cardInfo.selftext}}</p>
+  <mat-card-actions>
+    <span> <a [href]="'http://www.reddit.com/cardInfo.permalink'">Link</a></span> | 
+    <span> Score: {{cardInfo.score}}</span> |
+    <span> Upvote: {{cardInfo.ups}}</span> |
+    <span>Downvote: {{cardInfo.downs}}</span> |
+    <span>Total Comments: {{cardInfo.num_comments}}</span>
+  </mat-card-actions>
+</mat-card>

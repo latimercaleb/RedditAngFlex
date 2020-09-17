@@ -1,0 +1,12 @@
+p {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cards{
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: teal;
+} 

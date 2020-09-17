@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='wrapper'>
+  <p>{{this.title}}</p>
+  <button mat-raised-button color="accent"
+  (click)='getData()'>Click and check console</button>
+  <hr>
+  <!--
+    Best way to represent this data
+    Then shift it responsively
+
+    For mobile: fxLayout="column" fxLayoutGap="32px"
+    For desktop:  
+  -->
+  <div *ngIf= "cache.length > 0"  
+    fxLayout="row wrap" 
+    fxLayout.lt-sm="column" 
+    fxLayoutGap="32px" 
+    fxLayoutAlign="flex-start">
+    <h3>Data is as follows:</h3>
+    <app-cards *ngFor="let details of cache" [cardInfo]="details"
+    fxFlex.lt-md="0 1 calc(50% - 32px)"
+    fxFlex.lt-sm="100%"></app-cards>
+  </div>
+</div>
+
